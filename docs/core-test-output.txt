@@ -1,0 +1,17 @@
+test_budget (test_core.Core.test_budget) ... ok
+test_empty (test_core.Core.test_empty) ... ok
+test_fusion (test_core.Core.test_fusion) ... ok
+test_metric (test_core.Core.test_metric) ... ok
+test_schema_features (test_core.Core.test_schema_features) ... ok
+test_sparse_roundtrip (test_core.Core.test_sparse_roundtrip) ... ok
+test_structured (test_core.Core.test_structured) ... ok
+test_unicode (test_core.Core.test_unicode) ... ok
+test_wand_lexical (test_core.Core.test_wand_lexical) ... ok
+test_wand_random (test_core.Core.test_wand_random) ... ok
+test_wand_ties (test_core.Core.test_wand_ties) ... ok
+test_wand_zero (test_core.Core.test_wand_zero) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.142s
+
+OK

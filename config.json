@@ -1,0 +1,86 @@
+{
+  "region": "us-east-1",
+  "bucket": "sagemaker-ml-challenge-gururaj-2026",
+  "processed_dir": "../data/processed",
+  "raw_dir": "../data/raw",
+  "work_dir": "../data/er_ec2_final_run",
+  "seed": 20260927,
+  "cpu_threads": 24,
+  "lexical_workers": 3,
+  "feature_workers": 16,
+  "read_batch_rows": 50000,
+  "query_batch_rows": 256,
+  "feature_shard_rows": 1000,
+  "minimum_free_gib": 30,
+  "sample": {
+    "fit": 50000,
+    "early": 3000,
+    "calibrate": 5000,
+    "audit": 5000
+  },
+  "exclude_sample_globs": [
+    "../data/validation10k/source1.parquet",
+    "../data/final_er_v1/samples/*.parquet",
+    "../data/previous_samples/*.parquet"
+  ],
+  "retrieval": {
+    "route_k": {
+      "name": 10,
+      "address_char": 10,
+      "address_word": 10,
+      "numeric": 10,
+      "stripped": 5,
+      "accent": 5,
+      "combined": 5,
+      "embedding": 20
+    },
+    "name_max_features": null,
+    "address_char_max_features": null,
+    "address_word_max_features": null,
+    "combined_max_features": null,
+    "rrf_constant": 60.0,
+    "candidate_budgets": [
+      16,
+      24,
+      32,
+      48,
+      64,
+      96
+    ],
+    "f05_tolerance": 0.001,
+    "recall_tolerance": 0.002
+  },
+  "embedding": {
+    "model": "intfloat/multilingual-e5-small",
+    "revision": "main",
+    "dimension": 384,
+    "batch_size": 128,
+    "max_length": 512,
+    "dtype": "float32",
+    "ann_lists": 8192,
+    "ann_nprobe": 128,
+    "ann_train_vectors": 524288,
+    "ann_search_k": 100,
+    "ann_query_batch": 1024,
+    "gpu_ids": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  "matcher": {
+    "num_boost_round": 5000,
+    "early_stopping_rounds": 50,
+    "learning_rate": 0.04,
+    "num_leaves": 31,
+    "min_data_in_leaf": 15,
+    "feature_fraction": 0.9,
+    "lambda_l2": 1.0,
+    "max_bin": 255,
+    "num_threads": 24,
+    "threshold_start": 0.05,
+    "threshold_end": 0.99,
+    "threshold_step": 0.01
+  }
+}

@@ -1,0 +1,10 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "er-ec2-final"
+version = "1.0.0"
+description = "V4 multi-route entity retrieval and Matcher V2, EC2 execution"
+requires-python = ">=3.11,<3.13"
+[tool.setuptools.packages.find]
+where = ["src"]
